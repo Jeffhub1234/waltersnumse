@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    window.onload = function() {
+        setTimeout(function() {
+            // Create overlay
+            var overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100vw';
+            overlay.style.height = '100vh';
+            overlay.style.background = 'black';
+            overlay.style.zIndex = '9999';
+            overlay.style.display = 'flex';
+            overlay.style.justifyContent = 'center';
+            overlay.style.alignItems = 'center';
+
+            // Create image
+            var img = document.createElement('img');
+            img.src = 'https://static.wikia.nocookie.net/creepypastavillains/images/2/2c/Jeff_the_Killer.jpg/revision/latest?cb=20190722045929'; // Replace with your jumpscare image
+            img.style.maxWidth = '80vw';
+            img.style.maxHeight = '80vh';
+
+            // Create sound
+            var audio = document.createElement('audio');
+            audio.src = 'https://www.myinstants.com/media/sounds/movie_1.mp3'; // Replace with your jumpscare sound
+            audio.autoplay = true;
+
+            overlay.appendChild(img);
+            overlay.appendChild(audio);
+            document.body.appendChild(overlay);
+
+            // Remove overlay after 2 seconds
+            setTimeout(function() {
+                overlay.remove();
+            }, 2000);
+        }, 500); // Delay before jumpscare (0.5s)
+    };
+    </script>
+</body>
+</html>
